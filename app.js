@@ -23,9 +23,8 @@ mongoClient.connect(url, (err, db) => {
             const newUser = {
                 name: req.body.name,
                 phone: req.body.phone,
-                addres: req.body.addres,
                 password: req.body.password,
-                
+                addres: req.body.addres
             };
 
             const query = { phone: newUser.phone };
@@ -51,7 +50,7 @@ mongoClient.connect(url, (err, db) => {
                 if (result != null) {
                     const objToSend = {
                         name: result.name,
-                        password: result.password,
+                        password: result.password
                     };
 
                     res.status(200).send(JSON.stringify(objToSend));
@@ -68,7 +67,6 @@ mongoClient.connect(url, (err, db) => {
                 totalTxt: req.body.totalTxt,
                 address: req.body.address,
                 title: req.body.title
-                
             };
         
             const query = { totalTxt: newPay.totalTxt };
