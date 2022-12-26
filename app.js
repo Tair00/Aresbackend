@@ -4,8 +4,8 @@ dotenv.config()
 const express = require("express");
 const app = express();
 const mongoClient = require("mongodb").MongoClient;
-const url = "mongodb+srv://Tair00:werty247@cluster0.8ddgcpp.mongodb.net/Aresdb?retryWrites=true&w=majority";
 
+const url = "mongodb://localhost:27017";
 const cors = require("cors");
 
 app.use(express.json());
@@ -66,8 +66,8 @@ mongoClient.connect(url, (err, db) => {
             const newPay = {
                 pay: req.body.pay,
                 totalTxt: req.body.totalTxt,
-                address: req.body.address
-                
+                address: req.body.address,
+                title: req.body.title
                 
             };
         
